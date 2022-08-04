@@ -1,0 +1,10 @@
+.aboutus h1{
+    text-align: center; 
+    color: rgb(255, 0, 0);   
+}
+.aboutus p{
+    text-align: justify;
+}
+.aboutus{
+    padding: 50px;
+}

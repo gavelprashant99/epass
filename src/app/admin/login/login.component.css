@@ -1,0 +1,19 @@
+.bg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(4,9,30,0.7)),url(../../../assets/banner.jpg);
+width: 100%;
+height: 100vh;
+background-size: cover;
+}
+.card{
+    opacity: 0.8;
+}
+.form-container h1{
+    color: aliceblue
+    ;
+}
+.form-label{
+    color: aliceblue;
+}
+.form-check-label{
+    color: aliceblue;
+}
