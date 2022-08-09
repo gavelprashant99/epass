@@ -19,8 +19,14 @@ export class FetchMastersService {
    getNagarList(Id:string){
     return this.http.get('http://localhost:4001/master/nagar/'+Id);
    }
-   getWardList(Id:string){
-    return this.http.get('http://localhost:4001/master/wd/'+Id);
+   getWardList(distId:string, nagar_id:string){
+    return this.http.get('http://localhost:4001/master/wd/'+distId+'/'+nagar_id);
+   }
+   getGPList(district:string, block:string){
+    return this.http.get('http://localhost:4001/master/'+'gp/'+district+'/'+block);
+   }
+   getVillageList(district:string, block:string,gp_id:string){
+    return this.http.get('http://localhost:4001/master/'+'village/'+district+'/'+block+'/'+gp_id);
    }
 
 }

@@ -88,6 +88,15 @@ button:hover {
 .textarea_control textarea {
   width: 100%;
 }
+.radio-style{
+  height: 1.2em;
+  width: 1.2em;
+  vertical-align: middle;
+  margin-left: 2em;
+}
+.radio-style span{
+  margin-right: 2em;
+}
 
 @media (max-width: 700px ) {
   .textarea_control {

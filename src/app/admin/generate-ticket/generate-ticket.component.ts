@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FetchMastersService } from './../../services/fetch-masters.service'
 @Component({
   selector: 'app-generate-ticket',
@@ -6,18 +6,29 @@ import { FetchMastersService } from './../../services/fetch-masters.service'
   styleUrls: ['./generate-ticket.component.css']
 })
 export class GenerateTicketComponent implements OnInit {
-   
+
+  @ViewChild('enableUrban') urban!: ElementRef;
+  @ViewChild('enableRural') rural!: ElementRef;
   distdata =null;
   district_id="";
-  Ward_No="";
+  block_id="";
+  nagar_id="";
+  village_id="";
+  gp_id="";
+
+  Ward_No=null;
   blockdata=null;
   wardData=null;
   nagardata = null;
+  GPData=null;
+  villageData=null;
   showNagar:boolean = false;
   showBlock:boolean = false;
-
+  showGP:boolean = false;
+  showVillages:boolean = false;
+  showWard:boolean=false;
   distlist =null;
-  
+
   constructor(private fetch: FetchMastersService) { }
 
   ngOnInit(): void {
@@ -26,14 +37,17 @@ export class GenerateTicketComponent implements OnInit {
       this.distdata = res.data;
     });
   }
-   
-  getBlockList(){ 
+
+  getBlockList(){
     console.log(this.district_id);
     this.showNagar = false;
     this.showBlock = true;
     this.fetch.getBlockList(this.district_id).subscribe((res:any)=>{
       console.log(res.data);
       this.blockdata = res.data;
+      this.showGP = false;
+      this.showWard = false;
+      this.showVillages = false;
   });
    }
 
@@ -47,17 +61,49 @@ export class GenerateTicketComponent implements OnInit {
     this.fetch.getNagarList(this.district_id).subscribe((res:any)=>{
       console.log(res.data);
       this.nagardata = res.data;
+      this.showGP = false;
+      this.showWard = false;
+      this.showVillages = false;
     });
    }
 
-   getWardList(){ 
-    console.log(this.Ward_No);
-    // this.showNagar = false;
-    // this.showBlock = true;
-    this.fetch.getWardList(this.Ward_No).subscribe((res:any)=>{
+   getWardList(){
+    console.log(this.district_id, this.nagar_id);
+    this.fetch.getWardList(this.district_id, this.nagar_id).subscribe((res:any)=>{
       console.log(res.data);
       this.wardData = res.data;
-  });
+      this.showWard = true;
+      this.showGP = false;
+      this.showVillages = false;
+    });
+   }
+
+   getGPList(){
+    console.log(this.block_id);
+    this.fetch.getGPList(this.district_id, this.block_id).subscribe((res:any)=>{
+      console.log(res.data);
+      this.GPData = res.data;
+      this.showWard = false;
+      this.showGP = true;
+      this.showVillages = false;
+    });
+   }
+
+   getVillageList(){
+    console.log("here : ", this.district_id, this.block_id, this.gp_id)
+    this.fetch.getVillageList(this.district_id, this.block_id, this.gp_id).subscribe((res:any)=>{
+      console.log(res);
+      this.villageData = res.data;
+      this.showWard = false;
+      this.showGP = true;
+      this.showVillages = true;
+    });
+   }
+
+   enableNikay(){
+    this.urban.nativeElement.disabled = false;
+    this.rural.nativeElement.disabled = false;
+
    }
 
 }
