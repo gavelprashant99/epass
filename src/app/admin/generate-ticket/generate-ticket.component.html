@@ -4,8 +4,26 @@
       Apply for pass
 
     </h2>
+    <br>
     <form action="">
-
+      <br>
+      <div class="form_control">
+        <label>User Type: </label>
+        <input name="type" [(ngModel)]="type" type="radio" [value]="0"/> Public
+        <input name="type" [(ngModel)]="type" type="radio" [value]="1" /> Departmental
+      </div>
+      <br>
+      <br>
+      <div class="form_control">
+        <label for="Mobile Number">Full Name: </label>
+        <input
+          type="text"
+          id="Name"
+          name="Full Name"
+          placeholder="enter your full name"
+        />
+      </div>
+      <br>
         <div class="form_control">
           <label for="Gender"> Gender </label>
           <select id="Gender" name="Gender">
@@ -13,7 +31,6 @@
             <option value="Female">Female</option>
             <option value="Male">Male</option>
             <option value="Transgender">Transgender</option>
-
           </select>
         </div>
         <br>
@@ -28,26 +45,16 @@
         </div>
         <br>
         <div class="form_control">
+          <label for="date"> Date of Birth</label>
+          <input value="2022-01-10" type="date" id="date" name="dob" />
+        </div>
+        <br>
+        <div *ngIf="type === 1" class="form_control">
           <label for="Department"> Department</label>
           <select id="Department" name="Department">
             <option value="">Select Department</option>
             <option value="Cs&it">Cs&it</option>
           </select>
-        </div>
-        <br>
-        <div class="form_control">
-          <label for="date"> Date </label>
-          <input value="2022-01-10" type="date" id="date" name="date" />
-        </div>
-         <br>
-        <div class="form_control">
-          <label for="Time"> Time </label>
-          <input
-          type="time"
-            id="timel"
-            name="timel"
-            placeholder="Timel"
-          />
         </div>
         <br>
         <div class="form_control">
@@ -75,7 +82,7 @@
 
        <br>
         <div>
-          <label>Nikay : </label>
+          <label>Nikay: </label>
           <input class="radio-style" (click)="getUrbanList()" #enableUrban type="radio" name="Subject"  value="Subject1" disabled><span> Urban</span>
           <input class="radio-style" (click)="getBlockList()"  #enableRural type="radio" name="Subject"  value="Subject2" disabled><span> Rural</span>
         </div>
@@ -126,10 +133,10 @@
               {{village.village_name}}</option>
           </select>
         </div>
-
-
-
-      <br>
+      <div class="form-group">
+        <label for="eaddress">Address</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
       <div class="button_container">
         <button type="submit">Submit</button>
       </div>

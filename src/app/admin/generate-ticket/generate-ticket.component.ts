@@ -10,6 +10,7 @@ export class GenerateTicketComponent implements OnInit {
   @ViewChild('enableUrban') urban!: ElementRef;
   @ViewChild('enableRural') rural!: ElementRef;
   distdata =null;
+  type:any;
   district_id="";
   block_id="";
   nagar_id="";
