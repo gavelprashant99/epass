@@ -1,0 +1,44 @@
+body {
+    font-family: "Poppins", sans-serif;
+   
+  }
+ .baclcolour{
+    background-color: lightblue;
+ } 
+  .container {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px;
+    background-position: center;
+    background-size: cover;
+    
+  }
+  .apply_box {
+    max-width: 900px;
+    height: auto;
+    padding: 20px;
+    background-color:white;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+    border-radius: 10px;
+  } 
+  .radiobtn{
+    font-size: 20px;
+    padding: 20px;
+    display: inline-block;
+  }
+   .form_control {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+  label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  input[type="radio"]{
+    margin-left: 60px;
+    border: 1px ;
+  }

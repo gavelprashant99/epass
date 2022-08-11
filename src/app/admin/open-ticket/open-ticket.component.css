@@ -1,0 +1,118 @@
+.baclcolour{
+    background-color: lightblue;
+    
+  }
+.headtext{
+    text-align: center;
+  }
+
+  
+ 
+    
+  
+    .container {
+      max-width: auto;
+      height: auto;
+      margin: 0 auto;
+      padding: 30px;
+      /* background-position: center; */
+      /* background-size: cover; */
+      /* background-color: lightblue; */
+    }
+    
+    .apply_box {
+      max-width: 900px;
+      height: auto;
+      padding: 20px;
+      background-color: white;
+      margin: 0 auto;
+      margin-top: 20px;
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      border-radius: 10px;
+    }
+    
+    .title_small {
+      font-size: 20px;
+    }
+    
+    .form_container {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .form_control {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+    }
+    
+    label {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    input,
+    select,
+    textarea {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    input[type="radio"]{
+      margin-left: 60px;
+      border: 1px ;
+    }
+    
+    input:focus {
+      outline-color: #0d3c20;
+    }
+    
+    .button_container {
+      display: flex;
+        align-items: center;
+        
+      justify-content: flex-end;
+      margin-top: 20px;
+      font-size: 25px;
+    }
+    .btncls{
+      text-align: center;
+      align-items: center;
+      font-size: 25px;
+      
+    }
+    .radiobtn{
+      font-size: 30px;
+      padding: 20px;
+      display: inline-block;
+    }
+    button {
+      background-color:crimson;
+      border: transparent solid 2px;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 8px;
+      transition: 0.3s ease-in;
+    }
+    button:hover {
+      background-color: #ccc;
+      border: 2px solid #0d3c20;
+      color: black;
+      transition: 0.3s ease-out;
+      cursor: pointer;
+    }
+    .textarea_control {
+      grid-column: 1 / span 2;
+    }
+    .textarea_control textarea {
+      width: 100%;
+    }
+    
+    @media (max-width: 700px ) {
+      .textarea_control {
+        grid-column: 1 / span 1;
+      }
+    } ;
+  

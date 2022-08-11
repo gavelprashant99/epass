@@ -15,7 +15,7 @@ import { HomeComponent } from './admin/home/home.component';
 import { ContactUsComponent } from './admin/contact-us/contact-us.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { AfterLoginComponent } from './admin/after-login/after-login.component';
+
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -29,8 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     ContactUsComponent,
-    AboutUsComponent,
-    AfterLoginComponent
+    AboutUsComponent
+    
   ],
   imports: [
     BrowserModule,

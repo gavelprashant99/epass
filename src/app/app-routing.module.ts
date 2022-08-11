@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { AfterLoginComponent } from './admin/after-login/after-login.component';
+
 import { ContactUsComponent } from './admin/contact-us/contact-us.component';
 import { GenerateTicketComponent } from './admin/generate-ticket/generate-ticket.component';
 import { HomeComponent } from './admin/home/home.component';
@@ -16,8 +16,8 @@ const routes: Routes = [
 {path: 'open-ticket', component: OpenTicketComponent},
 {path: 'contact-us', component: ContactUsComponent},
 {path: 'about-us', component: AboutUsComponent},
-{path: 'login', component: LoginComponent},
-{path:'after-login', component:AfterLoginComponent}
+{path: 'login', component: LoginComponent}
+
 ];
 
 @NgModule({
