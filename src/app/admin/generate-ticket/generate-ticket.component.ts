@@ -10,7 +10,7 @@ export class GenerateTicketComponent implements OnInit {
   @ViewChild('enableUrban') urban!: ElementRef;
   @ViewChild('enableRural') rural!: ElementRef;
   distdata =null;
-  type:any;
+  // type:any;
   district_id="";
   block_id="";
   nagar_id="";
@@ -29,6 +29,9 @@ export class GenerateTicketComponent implements OnInit {
   showVillages:boolean = false;
   showWard:boolean=false;
   distlist =null;
+
+  showadd:boolean = false;
+  showdept:boolean = false;
 
   constructor(private fetch: FetchMastersService) { }
 
@@ -55,6 +58,19 @@ export class GenerateTicketComponent implements OnInit {
    showdistrict(){
     this.distlist = this.distdata;
    }
+
+   getshowadd(){
+    // this.showadd = !this.showadd;
+    this.showadd = false;
+    this.showdept = true;
+   
+  }
+  getshowdept(){
+  //  this.showdept=!this.showdept;
+  this.showadd = true;
+  this.showdept = false;
+   
+  }
 
    getUrbanList(){
     this.showBlock = false;

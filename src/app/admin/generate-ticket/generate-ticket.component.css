@@ -2,8 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
-
+.backimg{
+  background-color: lightblue;
+}
 .imgcl{
   width: max-content;
   height: auto;
@@ -14,6 +17,7 @@
   margin: 0 auto;
   padding: 30px;
   background-position: center;
+  
   background-size: cover;
 }
 
@@ -21,7 +25,7 @@
   max-width: 900px;
   height: auto;
   padding: 20px;
-  background-color:palegoldenrod;
+  background-color:white;
   margin: 0 auto;
   margin-top: 20px;
   box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
@@ -44,7 +48,7 @@
 }
 
 label {
-  font-size: 15px;
+  font-size: 19px;
   margin-bottom: 5px;
 }
 
@@ -63,12 +67,12 @@ input:focus {
 
 .button_container {
   display: flex;
-
-  justify-content: flex-end;
+   font-size: 20px;
+  justify-content:center;
   margin-top: 20px;
 }
 button {
-  background-color: #0d3c20;
+  background-color: crimson;
   border: transparent solid 2px;
   padding: 5px 10px;
   color: white;
