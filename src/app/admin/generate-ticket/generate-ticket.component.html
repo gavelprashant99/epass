@@ -79,8 +79,8 @@
        <input (click)="getshowdept()" class="radio-style" type="radio" name="Subject" id="radio2" value="Subject2">
        <label for="radio2">Departmental</label>
       </div>
-
-      <div class="form_control" *ngIf="showadd ">
+       <br>
+      <div class="form_control" *ngIf=" showdept">
             
         <!-- <label for="publicaddress" > Public Address</label> 
         <textarea>
@@ -97,15 +97,15 @@
 
             </div>
             <br>
-            <br>
+            
         <div>
-          <br>
+          
           <label>Nikay: </label>
           <input class="radio-style" (click)="getUrbanList()" #enableUrban type="radio" name="Subject"  value="Subject1" disabled><span> Urban</span>
           <input class="radio-style" (click)="getBlockList()"  #enableRural type="radio" name="Subject"  value="Subject2" disabled><span> Rural</span>
         </div>
         <br>
-        <br>
+        
 
         <div class="form_control" *ngIf="showNagar">
           <label for="District" > Nagar List </label>
@@ -115,7 +115,7 @@
               {{nagar.block_name}}</option>
           </select>
         </div>
-
+          
         <div class="form_control" *ngIf="showNagar && showWard">
           <label for="Ward"> Ward List </label>
           <select  id="Ward" name="Ward" >
@@ -124,7 +124,7 @@
               {{ward.Ward_Name}}</option>
           </select>
         </div>
-
+       
         <div class="form_control" *ngIf="showBlock">
           <label for="District" > Block List </label>
           <select id="nagar" name="nagar" [(ngModel)]="block_id" name="block_id" (change)="getGPList()">
@@ -133,7 +133,7 @@
               {{block.block_name}}</option>
           </select>
         </div>
-
+         
         <div class="form_control" *ngIf="showBlock && showGP" (click)="getVillageList()">
           <label for="District" > Gram Panchayat List </label>
           <select id="gp" [(ngModel)]="gp_id" name="gp_id">
@@ -142,7 +142,7 @@
               {{gp.panchayat_name_hindi}}</option>
           </select>
         </div>
-
+        
         <div class="form_control" *ngIf="showBlock && showGP && showVillages" >
           <label for="District" > Village List </label>
           <select id="block" name="village_id" [(ngModel)] = "village_id"  >
@@ -156,8 +156,8 @@
           
         </textarea>
       </div>
-          
-      <div class="form_control" *ngIf="showdept" >
+        <br>  
+      <div class="form_control" *ngIf="showadd" >
 
 
             
@@ -166,7 +166,7 @@
           <!-- <option *ngFor="let nagar of nagardata" >
             {{nagar.block_name}}</option> -->
         </select>
-          
+         <br> 
         <div class="form_control">
           <label for="desig">Designation</label>
           <input

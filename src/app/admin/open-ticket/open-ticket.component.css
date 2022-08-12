@@ -1,16 +1,12 @@
 .baclcolour{
     background-color: lightblue;
+    height: 100%;
     
   }
 .headtext{
     text-align: center;
   }
-
-  
- 
-    
-  
-    .container {
+   .container {
       max-width: auto;
       height: auto;
       margin: 0 auto;
@@ -26,7 +22,7 @@
       padding: 20px;
       background-color: white;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 120px;
       box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
       border-radius: 10px;
     }
@@ -48,7 +44,7 @@
     }
     
     label {
-      font-size: 20px;
+      font-size: 25px;
       margin-bottom: 10px;
     }
     
@@ -58,7 +54,7 @@
       padding: 6px 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      font-size: 15px;
+      font-size: 20px;
     }
     input[type="radio"]{
       margin-left: 60px;

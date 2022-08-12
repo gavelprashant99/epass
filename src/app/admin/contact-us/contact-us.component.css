@@ -42,3 +42,25 @@ body {
     margin-left: 60px;
     border: 1px ;
   }
+
+  .button_container {
+    display: flex;
+     font-size: 20px;
+    justify-content:center;
+    margin-top: 20px;
+  }
+  button {
+    background-color: crimson;
+    border: transparent solid 2px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s ease-in;
+  }
+  button:hover {
+    background-color: #ccc;
+    border: 2px solid #0d3c20;
+    color: black;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+  }
