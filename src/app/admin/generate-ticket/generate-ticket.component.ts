@@ -63,13 +63,13 @@ export class GenerateTicketComponent implements OnInit {
     // this.showadd = !this.showadd;
     this.showadd = false;
     this.showdept = true;
-   
+
   }
   getshowdept(){
   //  this.showdept=!this.showdept;
   this.showadd = true;
   this.showdept = false;
-   
+
   }
 
    getUrbanList(){
@@ -121,6 +121,20 @@ export class GenerateTicketComponent implements OnInit {
     this.urban.nativeElement.disabled = false;
     this.rural.nativeElement.disabled = false;
 
+   }
+
+   userDetailsReg(){
+    let obj = {
+      "name": "Siddharth Vaidya",
+      "mobile":"9131354482",
+      "dob":"01-06-1963",
+      "email":"rahulvaidya90820@gmail.com",
+      "gender":"M",
+      "is_department":"Y"
+    }
+    this.fetch.postUserData(obj).subscribe((res:any)=>{
+      console.log("Response ", res);
+    });
    }
 
 }
