@@ -1,197 +1,206 @@
 <div class="backimg">
-<div class="container">
-  <div class="apply_box">
-    <h2>
-      Registration
-
-    </h2>
-    <br>
-
-    <form action="">
-      <!-- <br>
-      <div class="form_control">
-        <label>User Type: </label>
-        <input name="type" [(ngModel)]="type" type="radio" [value]="0"/> Public
-        <input name="type" [(ngModel)]="type" type="radio" [value]="1" /> Departmental
-      </div>
-      <br> -->
+  <div class="container">
+    <div class="apply_box">
+      <h2>
+        Registration
+  
+      </h2>
       <br>
-      <div class="form_control">
-        <label for="first name"> First Name</label>
-        <input
-          type="text"
-          id="Fname"
-          name="fnam"
-          placeholder="enter your first name"
-        />
-      </div>
-      <br>
-      <div class="form_control">
-        <label for="last name"> Last Name</label>
-        <input
-          type="text"
-          id="Lname"
-          name="lnam"
-          placeholder="enter your lastname"
-        />
-      </div>
-      <br>
-      <div class="form_control">
-        <label for="Mobile Number">Mobile Number </label>
-        <input
-          type="text"
-          id="Num"
-          name="Number"
-          placeholder="enter your Mobile number"
-        />
-      </div>
-      <br>
+  
+      <form #usersForm ="ngForm" (ngSubmit)="userDetailsReg(usersForm.value)">
+        <!-- <br>
         <div class="form_control">
-          <label for="Gender"> Gender </label>
-          <select id="Gender" name="Gender">
-          <option value="">Select Gender</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-            <option value="Transgender">Transgender</option>
-          </select>
+          <label>User Type: </label>
+          <input name="type" [(ngModel)]="type" type="radio" [value]="0"/> Public
+          <input name="type" [(ngModel)]="type" type="radio" [value]="1" /> Departmental
         </div>
+        <br> -->
         <br>
-
         <div class="form_control">
-          <label for="date"> Date of Birth</label>
-          <input value="2022-01-10" type="date" id="date" name="dob" />
-        </div>
-        <br>
-
-        <div class="radiobtn" >
-        <label>Pass User Type</label>
-        <input  (click)="getshowadd() " class="radio-style" type="radio" name="Subject"  id="radio1" value="Subject1" >
-        <label for="radio1">Public</label>
-       <input (click)="getshowdept()" class="radio-style" type="radio" name="Subject" id="radio2" value="Subject2">
-       <label for="radio2">Departmental</label>
-      </div>
-       <br>
-      <div class="form_control" *ngIf=" showdept">
-
-        <!-- <label for="publicaddress" > Public Address</label>
-        <textarea>
-
-        </textarea> -->
-        <div class="form_control">
-          <label for="District"> District </label>
-          <select [(ngModel)]="district_id" id="District" name="District" (change)="enableNikay()">
-            <option selected disabled>Select District</option>
-            <option  *ngFor="let district of distdata" value={{district.district_id}}>
-              {{district.district_name}}</option>
-          </select>
-
-
-            </div>
-            <br>
-
-        <div>
-
-          <label>Nikay: </label>
-          <input class="radio-style" (click)="getUrbanList()" #enableUrban type="radio" name="Subject"  value="Subject1" disabled><span> Urban</span>
-          <input class="radio-style" (click)="getBlockList()"  #enableRural type="radio" name="Subject"  value="Subject2" disabled><span> Rural</span>
-        </div>
-        <br>
-
-
-        <div class="form_control" *ngIf="showNagar">
-          <label for="District" > Nagar List </label>
-          <select id="nagar" name="nagar" [(ngModel)]="nagar_id" name="nagar_id" (change)="getWardList()">
-            <option selected disabled>Select Nagar</option>
-            <option *ngFor="let nagar of nagardata" [ngValue]="nagar.block_id" >
-              {{nagar.block_name}}</option>
-          </select>
-        </div>
-
-        <div class="form_control" *ngIf="showNagar && showWard">
-          <label for="Ward"> Ward List </label>
-          <select  id="Ward" name="Ward" >
-            <option selected disabled>Select Ward</option>
-            <option  *ngFor="let ward of wardData" value={{ward.Ward_No}}>
-              {{ward.Ward_Name}}</option>
-          </select>
-        </div>
-
-        <div class="form_control" *ngIf="showBlock">
-          <label for="District" > Block List </label>
-          <select id="nagar" name="nagar" [(ngModel)]="block_id" name="block_id" (change)="getGPList()">
-            <option selected disabled>Select Block</option>
-            <option *ngFor="let block of blockdata"  [ngValue]="block.block_id">
-              {{block.block_name}}</option>
-          </select>
-        </div>
-
-        <div class="form_control" *ngIf="showBlock && showGP" (click)="getVillageList()">
-          <label for="District" > Gram Panchayat List </label>
-          <select id="gp" [(ngModel)]="gp_id" name="gp_id">
-            <option selected disabled>Select Gram Panchayat</option>
-            <option *ngFor="let gp of GPData" [ngValue]="gp.panchayat_code">
-              {{gp.panchayat_name_hindi}}</option>
-          </select>
-        </div>
-
-        <div class="form_control" *ngIf="showBlock && showGP && showVillages" >
-          <label for="District" > Village List </label>
-          <select id="block" name="village_id" [(ngModel)] = "village_id"  >
-            <option selected disabled>Select Village</option>
-            <option *ngFor="let village of villageData" [ngValue]="village.vlocation" >
-              {{village.village_name}}</option>
-          </select>
-        </div>
-
-        <label for="publicaddress"  aria-placeholder="select id Proof" > Id Proof </label>
-        <select id="publicadd" name="publicadd" >
-
-        </select>
-        <br>
-        <label for="publicaddress"  > Public Address</label>
-        <textarea>
-
-        </textarea>
-      </div>
-        <br>
-      <div class="form_control" *ngIf="showadd" >
-
-
-
-        <label for="publicaddress"  aria-placeholder="select your department name"> Department list </label>
-        <select id="publicadd" name="publicadd" >
-          <!-- <option *ngFor="let nagar of nagardata" >
-            {{nagar.block_name}}</option> -->
-        </select>
-         <br>
-        <div class="form_control">
-          <label for="desig">Designation</label>
+          <label for="first name"> User Name</label>
           <input
-            type="text"
-            id="edesig"
-            name="designation"
-            placeholder="enter your designation"
+            type="text" ngModel
+            id="Fname"
+            name="fnam"
+            placeholder="enter your name"/>
+        </div>
+        <br>
+        <!-- <div class="form_control">
+          <label for="last name"> Last Name</label>
+          <input
+            type="text" ngModel
+            id="Lname"
+            name="lnam"
+            placeholder="enter your lastname"
+          />
+        </div>
+        <br> -->
+        <div class="form_control">
+          <label for="Mobile Number">Mobile Number </label>
+          <input
+            type="text" ngModel
+            id="Num"
+            name="Number"
+            placeholder="enter your Mobile number"
           />
         </div>
         <br>
-        <label for="publicaddress" > Department Address</label>
-        <textarea>
-
-        </textarea>
+        <div class="form_control">
+          <label for="email">Email</label>
+          <input
+            type="email" ngModel
+            id="Num"
+            name="email"
+            placeholder="enter your email"
+          />
+        </div>
         <br>
-        <label for="publicaddress"  aria-placeholder="select id Proof"> Departmental id Proof </label>
-        <select id="publicadd" name="publicadd" >
-          <!-- <option *ngFor="let nagar of nagardata" >
-            {{nagar.block_name}}</option> -->
-        </select>
-
-      </div>
-      <br>
-      <br>
-      <div class="button_container">
-        <button type="submit" (click)="userDetailsReg()">Submit 0</button>
-      </div>
-    </form>
+          <div class="form_control">
+            <label for="Gender"> Gender </label>
+            <select name="gender" ngModel>
+              <option [ngValue]="'Male'">Male</option>
+              <option [ngValue]="'Female'">Female</option>
+              <option [ngValue]="'Others'">Others</option>
+           </select>
+          </div>
+          <br>
+  
+          <div class="form_control">
+            <label for="date"> Date of Birth</label>
+            <input value="2022-01-10" type="date" id="date" name="dob"  ngModel />
+          </div>
+          <br>
+  
+          <div class="radiobtn" >
+          <label>Pass User Type</label>
+          <input  (click)="getshowadd() " class="radio-style" type="radio" name="is_department" ngModel='Department'
+          value="Public"  id="radio1">
+          <label for="radio1">Public</label>
+         <input (click)="getshowdept()" class="radio-style" type="radio" name="is_department" ngModel='Department' id="radio2" value="Departmental">
+         <label for="radio2">Departmental</label>
+        </div>
+         <br>
+        <div class="form_control" *ngIf=" showdept">
+  
+          <!-- <label for="publicaddress" > Public Address</label>
+          <textarea>
+  
+          </textarea> -->
+          <div class="form_control">
+            <label for="District"> District </label>
+            <select [(ngModel)]="district_id" id="District" name="District" (change)="enableNikay()">
+              <option selected disabled>Select District</option>
+              <option  *ngFor="let district of distdata" value={{district.district_id}}>
+                {{district.district_name}}</option>
+            </select>
+  
+  
+              </div>
+              <br>
+  
+          <div>
+  
+            <label>Nikay: </label>
+            <input class="radio-style" (click)="getUrbanList()" #enableUrban type="radio" name="Subject"  value="Subject1" disabled><span> Urban</span>
+            <input class="radio-style" (click)="getBlockList()"  #enableRural type="radio" name="Subject"  value="Subject2" disabled><span> Rural</span>
+          </div>
+          <br>
+  
+  
+          <div class="form_control" *ngIf="showNagar">
+            <label for="District" > Nagar List </label>
+            <select id="nagar" name="nagar" [(ngModel)]="nagar_id" name="nagar_id" (change)="getWardList()">
+              <option selected disabled>Select Nagar</option>
+              <option *ngFor="let nagar of nagardata" [ngValue]="nagar.block_id" >
+                {{nagar.block_name}}</option>
+            </select>
+          </div>
+          <div class="form_control" *ngIf="showNagar && showWard">
+            <label for="Ward"> Ward List </label>
+            <select  id="Ward" name="Ward" >
+              <option selected disabled>Select Ward</option>
+              <option  *ngFor="let ward of wardData" value={{ward.Ward_No}}>
+                {{ward.Ward_Name}}</option>
+            </select>
+          </div>
+  
+          <div class="form_control" *ngIf="showBlock">
+            <label for="District" > Block List </label>
+            <select id="nagar" name="nagar" [(ngModel)]="block_id" name="block_id" (change)="getGPList()">
+              <option selected disabled>Select Block</option>
+              <option *ngFor="let block of blockdata"  [ngValue]="block.block_id">
+                {{block.block_name}}</option>
+            </select>
+          </div>
+  
+          <div class="form_control" *ngIf="showBlock && showGP" (click)="getVillageList()">
+            <label for="District" > Gram Panchayat List </label>
+            <select id="gp" [(ngModel)]="gp_id" name="gp_id">
+              <option selected disabled>Select Gram Panchayat</option>
+              <option *ngFor="let gp of GPData" [ngValue]="gp.panchayat_code">
+                {{gp.panchayat_name_hindi}}</option>
+            </select>
+          </div>
+  
+          <div class="form_control" *ngIf="showBlock && showGP && showVillages" >
+            <label for="District" > Village List </label>
+            <select id="block" name="village_id" [(ngModel)] = "village_id"  >
+              <option selected disabled>Select Village</option>
+              <option *ngFor="let village of villageData" [ngValue]="village.vlocation" >
+                {{village.village_name}}</option>
+            </select>
+          </div>
+  
+          <label for="publicaddress"  aria-placeholder="select id Proof" > Id Proof </label>
+          <select id="publicadd" name="publicadd" >
+  
+          </select>
+          <br>
+          <label for="publicaddress"  > Public Address</label>
+          <textarea>
+  
+          </textarea>
+        </div>
+          <br>
+        <div class="form_control" *ngIf="showadd" >
+  
+  
+  
+          <label for="publicaddress"  aria-placeholder="select your department name"> Department list </label>
+          <select id="publicadd" name="publicadd" >
+            <!-- <option *ngFor="let nagar of nagardata" >
+              {{nagar.block_name}}</option> -->
+          </select>
+           <br>
+          <div class="form_control">
+            <label for="desig">Designation</label>
+            <input
+              type="text"
+              id="edesig"
+              name="designation"
+              placeholder="enter your designation"
+            />
+          </div>
+          <br>
+          <label for="publicaddress" > Department Address</label>
+          <textarea>
+  
+          </textarea>
+          <br>
+          <label for="publicaddress"  aria-placeholder="select id Proof"> Departmental id Proof </label>
+          <select id="publicadd" name="publicadd" >
+            <!-- <option *ngFor="let nagar of nagardata" >
+              {{nagar.block_name}}</option> -->
+          </select>
+  
+        </div>
+        <br>
+        <br>
+        <div class="button_container">
+           <button type="submit">submit</button>
+          <!-- <button type="submit" (click)="userDetailsReg()"  >Submit </button> -->
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-</div>
+  </div>

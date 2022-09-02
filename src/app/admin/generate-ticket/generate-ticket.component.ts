@@ -1,11 +1,18 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FetchMastersService } from './../../services/fetch-masters.service'
+import { 
+    FormsModule,
+    FormGroup,
+    FormControl,
+    Validators} from '@angular/forms';
 @Component({
   selector: 'app-generate-ticket',
   templateUrl: './generate-ticket.component.html',
   styleUrls: ['./generate-ticket.component.css']
 })
 export class GenerateTicketComponent implements OnInit {
+
+  
 
   @ViewChild('enableUrban') urban!: ElementRef;
   @ViewChild('enableRural') rural!: ElementRef;
@@ -123,18 +130,22 @@ export class GenerateTicketComponent implements OnInit {
 
    }
 
-   userDetailsReg(){
-    let obj = {
-      "name": "Siddharth Vaidya",
-      "mobile":"9131354482",
-      "dob":"01-06-1963",
-      "email":"rahulvaidya90820@gmail.com",
-      "gender":"M",
-      "is_department":"Y"
-    }
-    this.fetch.postUserData(obj).subscribe((res:any)=>{
-      console.log("Response ", res);
-    });
-   }
 
+   userDetailsReg(data:any){
+    console.warn(data);
+
+   // let obj = {
+   //   "name": "Siddharth Vaidya",
+   //   "mobile":"9131354482",
+   //   "dob":"01-06-1963",
+   //   "email":"rahulvaidya90820@gmail.com",
+   //   "gender":"M",
+   //   "is_department":"Y"
+   // }
+   this.fetch.postUserData(data).subscribe((res:any)=>{
+      console.warn(res);
+     // console.log("Response ", this.objshow);
+     // this.objshow= res.data;
+   });
+  }
 }
