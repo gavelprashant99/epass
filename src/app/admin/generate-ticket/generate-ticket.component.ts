@@ -10,6 +10,8 @@ export class GenerateTicketComponent implements OnInit {
   @ViewChild('enableUrban') urban!: ElementRef;
   @ViewChild('enableRural') rural!: ElementRef;
   distdata =null;
+  iddata = null;
+  deplist = null;
   // type:any;
   district_id="";
   block_id="";
@@ -33,6 +35,8 @@ export class GenerateTicketComponent implements OnInit {
   showadd:boolean = false;
   showdept:boolean = false;
 
+  objshow = "";
+
   constructor(private fetch: FetchMastersService) { }
 
   ngOnInit(): void {
@@ -40,7 +44,19 @@ export class GenerateTicketComponent implements OnInit {
       console.log(res.data);
       this.distdata = res.data;
     });
+
+      this.fetch.getIdproof().subscribe((res:any)=>{
+      console.log(res.data);
+      this.iddata = res.data;
+    });
+
+    this.fetch.getDepartmentlist().subscribe((res:any)=>{
+      console.log(res.data);
+      this.deplist = res.data;
+    });
+
   }
+
 
   getBlockList(){
     console.log(this.district_id);
@@ -123,17 +139,21 @@ export class GenerateTicketComponent implements OnInit {
 
    }
 
-   userDetailsReg(){
-    let obj = {
-      "name": "Siddharth Vaidya",
-      "mobile":"9131354482",
-      "dob":"01-06-1963",
-      "email":"rahulvaidya90820@gmail.com",
-      "gender":"M",
-      "is_department":"Y"
-    }
-    this.fetch.postUserData(obj).subscribe((res:any)=>{
-      console.log("Response ", res);
+   userDetailsReg(data:any){
+     console.warn(data);
+
+    // let obj = {
+    //   "name": "Siddharth Vaidya",
+    //   "mobile":"9131354482",
+    //   "dob":"01-06-1963",
+    //   "email":"rahulvaidya90820@gmail.com",
+    //   "gender":"M",
+    //   "is_department":"Y"
+    // }
+    this.fetch.postUserData(data).subscribe((res:any)=>{
+       console.warn(res);
+      // console.log("Response ", this.objshow);
+      // this.objshow= res.data;
     });
    }
 

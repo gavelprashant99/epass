@@ -12,6 +12,14 @@ export class FetchMastersService {
    return this.http.get('http://localhost:4001/master/district');
   }
 
+  getIdproof(){
+    return this.http.get('http://localhost:4001/master/idproof');
+  }
+
+  getDepartmentlist(){
+    return this.http.get('http://localhost:4001/master/departmentlist');
+  }
+
   getBlockList(Id:string){
     return this.http.get('http://localhost:4001/master/block/'+Id);
    }
@@ -29,8 +37,8 @@ export class FetchMastersService {
     return this.http.get('http://localhost:4001/master/'+'village/'+district+'/'+block+'/'+gp_id);
    }
 
-   postUserData(obj:any){
-    return this.http.post('http://localhost:4001/user/userRegistration',obj);
+   postUserData(data:any){
+    return this.http.post('http://localhost:4001/user/userRegistration',data);
    }
 
 }

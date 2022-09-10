@@ -29,6 +29,18 @@
           </div>
           <br>
           <div class="form-group">
+            <label for="Requested by" >Requested BY</label>
+            <input class="form-control"
+              type="text"
+              id="reqby"
+              name="reqby"
+             
+            />
+          </div>
+
+          <br>
+
+          <div class="form-group">
             <label for="date">Request Date </label>
             <input value="2022-01-10" class="form-control"  type="date" id="date" name="date" />
               
@@ -47,8 +59,9 @@
              <div class="form-group">
                 <label for="RDepartment"> Requested Department</label>
                 <select id="RDepartment" name="RDepartment"  class="form-control">
-                  <!-- <option value=""></option>
-                  <option value="Cs&it">Cs&it</option> -->
+                  <option ngModel >Select Department list </option>
+                  <option *ngFor="let departmentlist of deplist" >
+                    {{departmentlist.dept_name_eng}}</option>
                 </select>
               </div>
               <br>
