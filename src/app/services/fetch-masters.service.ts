@@ -41,4 +41,8 @@ export class FetchMastersService {
     return this.http.post('http://localhost:4001/user/userRegistration',data);
    }
 
+   postgenerateticket(obj:any){
+    return this.http.post('http://localhost:4001/user/generateTicket',obj);
+   }
+
 }

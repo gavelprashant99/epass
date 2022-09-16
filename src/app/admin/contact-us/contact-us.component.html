@@ -7,31 +7,40 @@
       </h2>
       <br>
       <br>
-      <form action="">
+      <form #usersForm = "ngForm" (ngSubmit)="generaTicket(usersForm.value)">
         
         <div class="form-group">
             <label for="Ticket number"> Ticket No </label>
             <input type="text" class="form-control"
-            type="text"
+            type="text" ngModel
             id="ticketno"
-            name="tnum"
+            name="tnumid"
             >
         </div>
         <br>
-        <div class="form-group">
-            <label for="Contact Number" >Contact Number</label>
+       
+          <div class="form-group">
+            <label for="date">Request Date </label>
+            <input value="" class="form-control"  ngModel
+              type="date" id="date" name="date" />
+              
+          </div>
+          <br>
+           <div class="form-group"> 
+            <label for="Time">Request Time </label>
             <input class="form-control"
-              type="text"
-              id="Num"
-              name="Number"
-             
+            type="time" ngModel
+              id="timel"
+              name="timel"
+              
             />
           </div>
+             
           <br>
           <div class="form-group">
             <label for="Requested by" >Requested BY</label>
             <input class="form-control"
-              type="text"
+              type="text" ngModel
               id="reqby"
               name="reqby"
              
@@ -39,27 +48,21 @@
           </div>
 
           <br>
-
           <div class="form-group">
-            <label for="date">Request Date </label>
-            <input value="2022-01-10" class="form-control"  type="date" id="date" name="date" />
-              
-          </div>
-          <br>
-           <div class="form-group"> 
-            <label for="Time">Request Time </label>
+            <label for="Contact Number" >Contact Number</label>
             <input class="form-control"
-            type="time"
-              id="timel"
-              name="timel"
-              
+              type="text" ngModel
+              id="Num"
+              name="Number"
+             
             />
           </div>
+
              <br>
              <div class="form-group">
                 <label for="RDepartment"> Requested Department</label>
-                <select id="RDepartment" name="RDepartment"  class="form-control">
-                  <option ngModel >Select Department list </option>
+                <select id="RDepartment" name="RDepartment"  class="form-control" ngModel>
+                  <option  >Select Department list </option>
                   <option *ngFor="let departmentlist of deplist" >
                     {{departmentlist.dept_name_eng}}</option>
                 </select>
@@ -68,9 +71,9 @@
               <div class="form-group">
                 <label for="roomno">Room No.</label>
                 <input class="form-control"
-                  type="text"
+                  type="text"  ngModel
                   id="roomnu"
-                  name="Room No"
+                  name="RoomNo"
                  
                 />
               </div>
@@ -78,13 +81,53 @@
               <div class="form-group">
                 <label for="Reason"> Reason</label>
                 <input class="form-control"
-                  type="text"
+                  type="text" ngModel
                   id="Reason"
                   name="Reason"
                  
                 />
               </div>
               <br> 
+              <div class="form-group">
+                <label for="idebtity type">Identity Type</label>
+                <input class="form-control"
+                  type="text" ngModel
+                  id="Identitytype"
+                  name="identitytype"
+                 
+                />
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="scanon">Scanned On</label>
+                <input class="form-control"
+                  type="text" ngModel
+                  id="scanon"
+                  name="scanon"
+                 
+                />
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="scanby">Scanned By</label>
+                <input class="form-control"
+                  type="text" ngModel
+                  id="scanby"
+                  name="scanby"
+                 
+                />
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="pass type"> Pass Type </label>
+                <select id="passtype" name="passtype" ngModel  class="form-control">
+                <option value="">Select Pass Type</option>
+                  <option value="G" selected ="">Government</option>
+                  <option value="P">Public</option>
+                  <option value="O">Other</option>
+                </select>
+              </div>
+               <br>
               <br>
               <div class="button_container">
                 <button type="submit">Submit</button>

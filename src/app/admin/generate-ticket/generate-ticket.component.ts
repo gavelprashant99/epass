@@ -18,6 +18,7 @@ export class GenerateTicketComponent implements OnInit {
   nagar_id="";
   village_id="";
   gp_id="";
+  dept_code="";
 
   Ward_No=null;
   blockdata=null;

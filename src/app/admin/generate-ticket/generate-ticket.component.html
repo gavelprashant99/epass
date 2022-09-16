@@ -61,9 +61,9 @@
           <label for="Gender"> Gender </label>
           <select id="Gender" name="Gender" ngModel >
           <option value="">Select Gender</option>
-            <option value="Female" selected ="">Female</option>
-            <option value="Male">Male</option>
-            <option value="Transgender">Transgender</option>
+            <option value="M" selected ="">Male</option>
+            <option value="F">Female</option>
+            <option value="T">Transgender</option>
           </select>
         </div>
         <br>
@@ -76,9 +76,9 @@
 
         <div class="radiobtn" >
         <label>Pass User Type</label>
-        <input  (click)="getshowadd() " class="radio-style" type="radio" name="publicradio"  id="radio1"  >
-        <label for="radio1">Public</label>
-       <input (click)="getshowdept()" class="radio-style" type="radio" name="depradio" id="radio2"   >
+        <input  (click)="getshowadd() " class="radio-style" type="radio" name="passtyperadio"  id="radio1" value="L"  ngModel>
+        <label for="radio1">Local</label>
+       <input (click)="getshowdept()" class="radio-style" type="radio" name="passtyperadio" id="radio2" value="D" ngModel >
        <label for="radio2">Departmental</label>
       </div>
        <br>
@@ -103,15 +103,15 @@
         <div>
 
           <label>Nikay: </label>
-          <input class="radio-style" (click)="getUrbanList()" #enableUrban type="radio" name="urbanradio" disabled   ><span> Urban</span>
-          <input class="radio-style" (click)="getBlockList()"  #enableRural type="radio" name="ruralradio"  disabled ><span> Rural</span>
+          <input class="radio-style" (click)="getUrbanList()" #enableUrban type="radio" name="nikayradio" value="G"  ngModel ><span> Urban</span>
+          <input class="radio-style" (click)="getBlockList()"  #enableRural type="radio" name="nikayradio" value="N"   ngModel><span> Rural</span>
         </div>
         <br>
 
 
         <div class="form_control" *ngIf="showNagar">
           <label for="District" > Nagar List </label>
-          <select id="nagar"  [(ngModel)]="nagar_id" name="nagar_id" (change)="getWardList()" >
+          <select id="nagar"  [(ngModel)]="nagar_id" name="nagar_id" (change)="getWardList()"  >
             <option selected disabled>Select Nagar</option>
             <option *ngFor="let nagar of nagardata" [ngValue]="nagar.block_id" >
               {{nagar.block_name}}</option>
@@ -172,12 +172,14 @@
 
 
         <label for="publicaddress"  aria-placeholder="select your department name"> Department list </label>
-        <select id="publicadd" name="publicadd" >
-          <option ngModel >Select Department list </option>
-          <option *ngFor="let departmentlist of deplist" >
+        <select  id="publicadd" name="publicadd" ngModel >
+          <option value="">Select Department list </option>
+          <option *ngFor="let departmentlist of deplist"  >
             {{departmentlist.dept_name_eng}}</option>
         </select>
          <br>
+         <!-- trying for departmentlist because name are to long for save so trying to save like district and others $value={{departmentlist.dept_code}},$ [(ngModel)]="dept_code" -->
+
         <div class="form_control">
           <label for="desig">Designation</label>
           <input
@@ -189,7 +191,7 @@
         </div>
         <br>
         <label for="publicaddress" > Department Address</label>
-        <textarea ngModel  name="depaddress">
+        <textarea   name="depaddress"   ngModel>
 
         </textarea>
         <br>
