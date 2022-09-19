@@ -171,10 +171,10 @@
 
 
 
-        <label for="publicaddress"  aria-placeholder="select your department name"> Department list </label>
-        <select  id="publicadd" name="publicadd" ngModel >
-          <option value="">Select Department list </option>
-          <option *ngFor="let departmentlist of deplist"  >
+        <label for="publicaddress" > Department list </label>
+        <select [(ngModel)]="dept_code"  id="publicadd" name="publicadd"   >
+          <option selected disabled >Select Department list </option>
+          <option *ngFor="let departmentlist of deplist" value={{departmentlist.dept_code}} >
             {{departmentlist.dept_name_eng}}</option>
         </select>
          <br>

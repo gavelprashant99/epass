@@ -10,13 +10,23 @@
       <form #usersForm = "ngForm" (ngSubmit)="generaTicket(usersForm.value)">
         
         <div class="form-group">
+          <label for="Contact Number" >Mobile Number</label>
+          <input class="form-control"
+            type="text" ngModel
+            id="Num"
+            name="Number"
+           
+          />
+        </div>
+        
+        <!-- <div class="form-group">
             <label for="Ticket number"> Ticket No </label>
             <input type="text" class="form-control"
             type="text" ngModel
             id="ticketno"
             name="tnumid"
             >
-        </div>
+        </div> -->
         <br>
        
           <div class="form-group">
@@ -46,19 +56,7 @@
              
             />
           </div>
-
-          <br>
-          <div class="form-group">
-            <label for="Contact Number" >Contact Number</label>
-            <input class="form-control"
-              type="text" ngModel
-              id="Num"
-              name="Number"
-             
-            />
-          </div>
-
-             <br>
+            <br>
              <div class="form-group">
                 <label for="RDepartment"> Requested Department</label>
                 <select id="RDepartment" name="RDepartment"  class="form-control" ngModel>
