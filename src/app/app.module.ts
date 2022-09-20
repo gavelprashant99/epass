@@ -18,6 +18,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 
 
 import {HttpClientModule} from '@angular/common/http';
+import { FinalpassComponent } from './finalpass/finalpass.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {HttpClientModule} from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FinalpassComponent
     
   ],
   imports: [

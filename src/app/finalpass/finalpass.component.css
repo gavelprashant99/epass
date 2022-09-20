@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  .backimg{
+    background-color: lightblue;
+  }
+  .imgcl{
+    width: max-content;
+    height: auto;
+  }
+  .container {
+    max-width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px;
+    background-position: center;
+    
+    background-size: cover;
+  }
+  .textshow{
+    text-align: center;
+    font-weight: normal;
+    font-size: 30px;
+    color:black;
+    background-color: rgb(224, 224, 35);
+  }
+  .apply_box {
+    max-width: 900px;
+    height: auto;
+    padding: 20px;
+    background-color:white;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+    border-radius: 10px;
+  }
+  
+  .title_small {
+    font-size: 20px;
+  }
+  
+  .form_container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .form_control {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  
+  input:focus {
+    outline-color: #0d3c20;
+  }
+  
+  .button_container {
+    display: flex;
+     font-size: 25px;
+    justify-content:center;
+    margin-top: 20px;
+  }
+  button {
+    background-color: crimson;
+    border: transparent solid 2px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s ease-in;
+  }
+  button:hover {
+    background-color: #ccc;
+    border: 2px solid #0d3c20;
+    color: black;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+  }
+  .textarea_control {
+    grid-column: 1 / span 2;
+  }
+  .textarea_control textarea {
+    width: 100%;
+  }
+  .radio-style{
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: middle;
+    margin-left: 2em;
+  }
+  .radio-style span{
+    margin-right: 2em;
+  }
+  
+  @media (max-width: 700px ) {
+    .textarea_control {
+      grid-column: 1 / span 1;
+    }
+  } ;
+  
