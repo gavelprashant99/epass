@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FetchMastersService } from './../../services/fetch-masters.service'
+
 @Component({
   selector: 'app-generate-ticket',
   templateUrl: './generate-ticket.component.html',

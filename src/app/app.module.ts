@@ -17,8 +17,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 
+
 import {HttpClientModule} from '@angular/common/http';
 import { FinalpassComponent } from './finalpass/finalpass.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { FinalpassComponent } from './finalpass/finalpass.component';
     BrowserAnimationsModule,
     MatDatepickerModule,
     HttpClientModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
